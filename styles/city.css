@@ -1,0 +1,576 @@
+@font-face{
+	font-family: Existence-Light;
+	src: url('fonts/Existence-Light.otf');
+}
+
+@font-face{
+	font-family: FiraSans-Regular;
+	src: url('fonts/FiraSans-Regular.otf');
+}
+
+@font-face{
+	font-family: FiraSans-ExtraLight;
+	src: url('fonts/FiraSans-ExtraLight.otf')
+}
+
+@font-face{
+	font-family: Cantarell-Regular;
+	src: url('fonts/Cantarell-Regular.ttf')
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+/*
+pseudo-element, when text is highlighted, changes background-color and color
+commented out, because W3C validator tags it as an error, I assumed it's because it's
+proprietary to Firefox
+
+::-moz-selection{
+	background-color: #274490;
+	color: #fff;
+}
+*/
+
+ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:active, a:link, a:visited, a:hover, a:focus{
+	outline: none;
+	color: #575755;
+}
+
+span{
+	display: block;
+}
+
+table, tr, td, th{
+	border: 1px solid #E3E4DF;
+	border-collapse: collapse;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+tr:hover{
+	background-color: #EAEAE2;
+}
+
+/* nav */
+#nav_container{
+	width: 100%;
+	height: 40px;
+	float: left;
+	position: fixed;
+	z-index: 3;
+	transition-property: all;
+    transition-duration: .1s;
+}
+
+.top{
+	background: none;
+}
+
+.scrolled{
+	background: #fff;
+	border-bottom: 1px solid #E5E5E5;
+}
+
+/* nav slider */
+#nav_slider{
+	width: auto;
+	height: 100%;
+	position: fixed;
+	transition-property: all;
+    transition-duration: 1s;
+}
+
+/*nav slider hamburger */
+#hamburger{
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	position: fixed;
+	z-index: 3;
+}
+
+.hamburger_stick{
+	width: 22px;
+	height: 2px;
+	margin-left: 9px;
+	margin-top: 5px;
+	border: none;
+	position: relative;
+	background-color: #fff;
+}
+
+.hamburger_stick.scrolled{
+	background-color: #000;
+}
+
+.hamburger_stick.one{
+	margin-top: 12px;
+}
+
+/* nav slider menu */
+#nav_slider_menu{
+	width: 300px;
+	height: 100%;
+	background-color: #000;
+	margin-left: -300px;
+	margin-top: 40px;
+	z-index: 1;
+	transition-property: all;
+    transition-duration: 1s;
+}
+
+.nav_slider_item{
+	width: auto;
+	height: auto;
+	padding: 20px;
+	border-bottom: 1px solid #242424;
+	float: none;
+	position: relative;
+	margin: 0;
+	display: block;
+	cursor: pointer;
+	transition-property: all;
+    transition-duration: .5s;
+}
+
+.nav_slider_item:hover{
+	background-color: #242424;
+}
+
+.nav_slider_item_text{
+	font-family: FiraSans-Regular;
+	font-size: 15px;
+	text-align: center;
+	color: #fff;
+	border: none;
+	background: none;
+}
+
+#nav_slider:hover #nav_slider_menu{
+	margin-left: 0;
+}
+
+/* nav bar */
+#nav_bar_container{
+	width: auto;
+	height: auto;
+	float: left;
+}
+
+#nav_activate_text{
+	width: 100%;
+	height: 100%;
+	font-family: FiraSans-Regular;
+	font-size: 20px;
+	color: #000;
+	right: 0;
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+	display: none;
+}
+
+#nav_bar{
+	width: 100%;
+	height: 100%;
+}
+
+.nav_bar_item_container{
+	width: auto;
+	height: 100%;
+	margin-left: 10px;
+	float: left;
+}
+
+.nav_bar_item{
+	height: auto;
+	background: none;
+	font-family: FiraSans-Regular;
+	font-size: 15px;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: center;
+	color: #fff;
+	margin-top: 5px;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition-property: all;
+    transition-duration: .2s;
+}
+
+.nav_bar_item.intro{
+	margin-left: 40px;
+}
+
+.nav_bar_item:hover{
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+.nav_bar_item.scrolled{
+	color: #000;
+}
+
+.nav_bar_item.scrolled:hover{
+	color: #000;
+	border: 1px solid #000;
+}
+
+.nav_bar_item.small_screen:hover{
+	color: #000;
+	border: 1px solid #fff;
+}
+
+/* nav bar small screen */
+@media screen and (max-width: 600px){
+	#nav_bar_container{
+		height: 40px;
+		background-color: #fff;
+		overflow: hidden;
+		float: none;
+	}
+
+	#nav_bar_container:hover{
+		height: auto;
+	}
+
+	#nav_activate_text{
+		display: block;
+	}
+
+	#nav_bar{
+		width: 100%;
+		height: auto;
+		float: none;
+		background-color: #fff;
+		border-bottom: 1px solid #E5E5E5;
+	}
+
+	.nav_bar_item_container{
+		float: none;
+	}
+
+	.nav_bar_item{
+		color: #000;
+	}
+
+	.nav_bar_item_container, .nav_bar_item.intro{
+		margin-left: 0;
+	}
+
+	.nav_bar_item:hover{
+		border: none;
+	}
+}
+
+/* header */
+.header{
+	width: 100%;
+	height: 400px;
+	background-color: #fff;
+	position: fixed;
+	background-repeat: no-repeat;
+	background-position: center 75%;
+	background-size: cover;
+	z-index: 0;
+}
+
+.header.home{
+	background-image: url('../images/banners/toronto_banner_edit.jpg');
+}
+
+.header.art{
+	background-image: url('../images/banners/art_gallery_ontario_edit.jpg');
+}
+
+.header.museum{
+	background-image: url('../images/banners/royal_ontario_museum_edit.jpg');
+}
+
+.header_text{
+	width: 100%;
+	font-family: Existence-Light;
+	font-size: 50px;
+	text-align: center;
+	color: #fff;
+	margin-top: 150px;
+	position: fixed;
+	background: none;
+}
+
+/* content */
+.absolute_container{
+	height: auto;
+	width: 100%;
+	margin-top: 400px;
+	position: absolute;
+	background-color: #fff;
+	z-index: 2;
+}
+
+.content_container{
+	width: 950px;
+	height: auto;
+	background-color: #fff;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.content_container.intro{
+	margin-top: -50px;
+	box-shadow: 0 0 5px #000;
+	position: absolute;
+	z-index: 4;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.content_container.intro.home{
+	background-color: #274490;
+}
+
+.content_container.intro.art{
+	background-color: #EC1D25;
+}
+
+.content_container.intro_museum{
+	background-color: #61007A;
+}
+
+.content_title{
+	width: 1150px;
+	padding-top: 200px;
+	padding-bottom: 200px;
+	font-family: Existence-Light;
+	font-size: 30px;
+	text-align: center;
+	color: #fff;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0 auto;
+}
+
+.content_title.first_title{
+	position: absolute;
+	top: 0;
+	z-index: 3;
+}
+
+.content_title.toronto_history{
+	background-image: url('../images/banners/history_toronto_edit.jpg');
+	background-position: 0% 75%;
+}
+
+.content_title.art_history{
+	background-image: url('../images/banners/ago_1922_edit.jpg');
+}
+
+.content_title.art_transformation{
+	background-image: url('../images/banners/art_gallery_ontario_edit.jpg');
+}
+
+.content_title.art_collection{
+	background-image: url('../images/banners/Pablo_Picasso_1902-03_La_soupe_ago_edit.jpg');
+	background-position: 0% 25%;
+}
+
+.content_title.museum_history{
+	background-image: url('../images/banners/royal_ontario_museum_history_edit.jpg');
+	background-position: 0% 75%;
+}
+
+.content_title.museum_crystal{
+	background-image: url('../images/banners/royal_ontario_museum_edit.jpg');
+	background-position: 0% 75%;	
+}
+
+.content_title.museum_galleries{
+	background-image: url('../images/banners/royal_ontario_museum_galleries_edit.jpg');
+	margin: 0 auto;
+}
+
+.intro_icon{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	border: 5px solid transparent;
+	margin: 0 auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-top: -60px;
+}
+
+.intro_icon_link{
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	display: block;
+}
+
+.intro_icon.flag{
+	background-color: #274490;
+	border-color: #fff;
+	background-image: url('../images/icons/toronto_flag.svg');
+}
+
+.intro_icon.art{
+	background-color: #fff;
+	border-color: #EC1D25;
+	background-image: url('../images/icons/ago_logo.jpg');
+}
+
+.intro_icon.museum{
+	background-color: #fff;
+	border-color: #61007A;
+	background-image: url('../images/icons/rom_logo.jpg')
+}
+
+.content_text{
+	font-family: Cantarell-Regular;
+	font-size: 18px;
+	color: #000;
+	text-align: justify;
+	margin-top: 20px;
+}
+
+.content_text.intro{
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.content_image_container{
+	width: 445px;
+	height: 475px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-left: 20px;
+	float: left;
+}
+
+.content_image{
+	width: 100%;
+	height: 405px;
+}
+
+.content_image_info{
+	width: 100%;
+	height: auto;
+	background-color: #000;
+}
+
+.content_image_info_text{
+	background-color: #000;
+	font-family: Cantarell-Regular;
+	font-size: 15px;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	text-decoration: underline;
+}
+
+.content_image_info:hover{
+	color: #ccc;
+}
+
+@media screen and (max-width: 1155px){
+	.content_title{
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.content_title.first_title{
+		position: relative;
+	}
+}
+
+@media screen and (max-width: 960px){
+	.absolute_container.sub{
+		margin-top: 0;
+		position: relative;
+	}
+
+	.content_container{
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+		position: relative;
+	}
+
+	.content_container.intro{
+		position: relative;
+		margin-top: 0;
+	}
+
+	.content_text{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.content_text.intro{
+		text-align: justify;
+	}
+
+	.content_image_container{
+		margin-left: 0;
+		margin: 0 auto;
+		float: none;
+	}
+}
+
+@media screen and (max-width: 460px){
+	.content_img_container{
+		width: 100%;
+		height: auto;
+		margin-top: 20px;
+	}
+
+	.content_img{
+		height: 80%;
+		float: left;
+	}
+
+	.content_image_info{
+		float: left;
+		margin-bottom: 20px;
+	}
+}
+
+#content_table{
+	width: 95%;
+	font-family: FiraSans-ExtraLight;
+	font-size: 20px;
+	text-align: center;
+	background-color: #F2F2F0;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+#table_title{
+	background-color: #DE6262;
+	color: #fff;
+	border: none;
+}
+
+.table_text{
+	width: 100%;
+	color: #000;
+}

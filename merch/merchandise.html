@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			Toronto Merchandise | Home
+		</title>
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<script type="text/javascript" src="scripts/main.js"></script>
+		<script type="text/javascript">
+			//resets inputs once page has loaded completely
+			var errorMsg = "<br>Amount inputs must be between 0 and 4, and customer name must be at least 4 characters.";
+			var pageName = "Merchandise";
+			document.addEventListener('DOMContentLoaded', function(){
+				resized(); resetForm();
+			}, true);
+		</script>
+	</head>
+	<body>
+		<header class="header merch" id="header">
+			<h1 id="header_txt">
+				Toronto Merchandise
+			</h1>
+			<div id="intro_container">
+				<p class="intro_txt">
+					Welcome to Toronto Merchandise!<br>You may order any of the items below, just enter your name at that 
+					top of the form and then the amount your require below each item.<br><br>You can create an account by clicking the button below.<br><br>
+					<a href="customer.php" class="intro_text link">
+						Create Account
+					</a>
+				</p>
+			</div>
+		</header>
+		<div id="absolute_container">
+			<div id="form_error">
+				<h2 id="form_error_title">Form Error</h2>
+				<p class="form_error_txt" id="form_error_txt_default"></p>
+			</div>
+			<form class="forms" id="input_form">
+				<div id="name_container">
+					<div class="input_container">
+						<input type="text" onblur='textInputs()' placeholder="Customer Name, no less than 4 characters" title="Customer Name" name="Customer Name" class="inputs user_input" id="customer_name">
+						<div class="error_icon">
+							<span class="butn_txt" id="err_txt">!</span>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_info">
+						<div class="item_img" id="Toronto_Skyline_Magnet_img"></div>
+						<span class="item_info_txt">
+							Toronto Skyline Magnet - £4.20
+						</span>
+					</div>
+					<div class="item_amount_input">
+						<input type="number" min="0" max="4" name="Toronto Skyline Magnet" placeholder="Item amount, 0 to 4" title="Item amount, 0 to 4" class="inputs amount item_amount user_input" id="amount_input_1">
+						<div class="error_icon amount">
+							<span class="butn_txt" id="err_txt">!</span>
+						</div>
+						<div class="input_butn_container">
+							<div class="input_butn" id="butn_minus_1" onclick='document.getElementById("amount_input_1").stepDown()'>
+								<span class="butn_txt">-</span>
+							</div>
+							<div class="input_butn" id="butn_plus_1" onclick='document.getElementById("amount_input_1").stepUp()'>
+								<span class="butn_txt">+</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_info">
+						<div class="item_img" id="Toronto_Mug_img"></div>
+						<span class="item_info_txt">
+							Toronto Mug - £7.12
+						</span>
+					</div>
+					<div class="item_amount_input">
+						<input type="number" min="0" max="4" name="Toronto Mug" placeholder="Item amount, 0 to 4" title="Item amount, 0 to 4" class="inputs amount item_amount user_input" id="amount_input_2">
+						<div class="error_icon amount">
+							<span class="butn_txt" id="err_txt">!</span>
+						</div>
+						<div class="input_butn_container">
+							<div class="input_butn" id="butn_minus_2" onclick='document.getElementById("amount_input_2").stepDown()>'>
+								<span class="butn_txt">-</span>
+							</div>
+							<div class="input_butn" id="butn_plus_2" onclick='document.getElementById("amount_input_2").stepUp()'>
+								<span class="butn_txt">+</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_info">
+						<div class="item_img" id="Toronto_Metal_Picture_Frame_img"></div>
+						<span class="item_info_txt">
+							Toronto Metal Picture Frame - £7.12
+						</span>
+					</div>
+					<div class="item_amount_input">
+						<input type="number" min="0" max="4" name="Toronto Metal Picture Frame" placeholder="Item amount, 0 to 4" title="Item amount, 0 to 4" class="inputs amount item_amount user_input" id="amount_input_3">
+						<div class="error_icon amount">
+							<span class="butn_txt" id="err_txt">!</span>
+						</div>
+						<div class="input_butn_container">
+							<div class="input_butn" id="butn_minus_3" onclick='document.getElementById("amount_input_3").stepDown()'>
+								<span class="butn_txt">-</span>
+							</div>
+							<div class="input_butn" id="butn_plus_3" onclick='document.getElementById("amount_input_3").stepUp()'>
+								<span class="butn_txt">+</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="summary_container">
+					<input type="button" value="Total Cost" onclick="getFormValidity()" class="inputs button" id="calc_cost">
+					<input type="button" value="Reset" onclick="resetForm()" class="inputs button" id="reset_butn">
+					<input type="text" value="Total Item Amount: 0" disabled="disabled" class="inputs summary" id="total_amount">
+					<input type="text" value="Total Cost: £0.00" disabled="disabled" class="inputs summary" id="total_cost">
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

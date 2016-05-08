@@ -1,0 +1,394 @@
+@font-face{
+	src: url('fonts/Cantarell-Regular.ttf');
+	font-family: Cantarell;
+}
+
+@font-face{
+	src: url('fonts/Existence-Light.otf');
+	font-family: Existence;
+}
+
+@font-face{
+	src: url('fonts/FiraSans-Light.ttf');
+	font-family: FiraSans;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
+.header{
+	width: 100%;
+	height: auto;
+	background-color: #000;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	padding-bottom: 100px;
+	z-index: 0;
+}
+
+.header.merch{
+	background-image: url("../images/toronto_city_edit.jpg");
+}
+
+.header.account{
+	background-image: url("../images/toronto_city_2_edit.jpg");
+}
+
+#header_txt{
+	font-family: Existence;
+	text-align: center;
+	color: #fff;
+	padding: 150px;
+	padding-bottom: 50px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#intro_container{
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+	background-color: #000;
+	opacity: 0.8;
+}
+
+.intro_txt{
+	font-family: FiraSans;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	padding: 70px;
+}
+
+.intro_text.link{
+	padding: 10px;
+	border: 1px solid #fff;
+	cursor: pointer;
+	color: #fff;
+	transition: .2s;
+}
+
+.intro_text.link:hover{
+	background-color: #fff;
+	color: #000;
+}
+
+#absolute_container{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	z-index: 1;
+	background-color: #fff;
+}
+
+#form_error{
+	width: 600px;
+	height: auto;
+	background-color: #DB544C;
+	margin: 0 auto;
+	margin-top: 20px;
+	display: none;
+}
+
+#form_error_title{
+	width: 100%;
+	padding: 10px;
+	padding-left: 0;
+	padding-right: 0;
+	font-family: Existence;
+	font-size: 30px;
+	color: #fff;
+	text-align: center;
+	background-color: #C23A2E;
+}
+
+.form_error_txt{
+	font-family: FiraSans;
+	font-size: 20px;
+	text-align: center;
+	padding: 20px;
+	color: #E7A8A4;
+}
+
+.form_error_txt.name{
+	text-decoration: underline;
+	padding: 0;
+}
+
+/* change height to auto */
+.forms{
+	width: 600px;
+	height: auto;
+	margin: 0 auto;
+	padding-bottom: 10px;
+}
+
+#name_container{
+	width: 100%;
+	height: 75px;
+	padding-top: 5px;
+	padding-bottom: 20px;
+}
+
+.inputs{
+	display: block;
+	width: 100%;
+	height: 25px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	background-color: #DBDBDB;
+	border: none;
+	border-bottom: 2px solid #fff;
+	font-family: FiraSans;
+	font-size: 20px;
+	color: #000;
+	text-align: center;
+	float: left;
+	transition: all .4s;
+}
+
+.inputs.amount{
+	width: 80%;
+	-moz-appearance: textfield;
+}
+
+.inputs.summary{
+	color: #686969;
+}
+
+.inputs.button{
+	width: calc(50% - 1.5px);
+	height: auto;
+	background-color: #2C97DF;
+	color: #fff;
+	cursor: pointer;
+	float: left;
+	outline: none;
+	transition: .4s;
+}
+
+.inputs.button:hover{
+	background-color: #2B80B9;
+}
+
+#reset{
+	margin-left: 2.5px;
+}
+
+.butn_txt{
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-family: FiraSans;
+	color: #fff;
+	text-align: center;
+	margin-top: 3px;
+}
+
+.error_icon{
+	width: 0;
+	height: 100%;
+	background-color: #C23A2E;
+	border-bottom: 2px solid #C23A2E;
+	font-size: 0px;
+	visibility: hidden;
+	padding-bottom: 4px;
+	float: left;
+	transition: all .4s;
+}
+
+.error_icon.amount{
+	padding-bottom: 0;
+}
+
+#err_txt{
+	margin-top: 10px;
+	font-size: 30px;
+}
+
+.inputs:invalid{
+	width: 90%;
+	border: none;
+	border-bottom: 2px solid #C23A2E;
+	box-shadow: none;
+	background-color: #DB544C;
+	color: #fff;
+}
+
+.inputs:invalid + .error_icon{
+	width: 10%;
+	font-size: 30px;
+	visibility: visible;
+}
+
+.item{
+	width: 100%;
+	height: auto;
+	padding-bottom: 40px;
+}
+
+.item_info{
+	width: 100%;
+	height: auto;
+	background-color: #E5E5E5;
+}
+
+.item_img{
+	width: 100%;
+	height: 250px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+#Toronto_Skyline_Magnet_img{
+	background-image: url("../images/toronto_skyline_magnet.png")
+}
+
+#Toronto_Mug_img{
+	background-image: url("../images/toronto_mug.png")
+}
+
+#Toronto_Metal_Picture_Frame_img{
+	background-image: url("../images/toronto_picture_frame.png");
+}
+
+.item_info_txt{
+	display: block;
+	width: 100%;
+	padding: 10px;
+	padding-left: 0;
+	padding-right: 0;
+	height: auto;
+	font-family: FiraSans;
+	font-size: 20px;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+}
+
+.item_amount_input{
+	width: 100%;
+	height: 50px;
+	background-color: #DBDBDB;
+}
+
+.input_butn_container{
+	width: 20%;
+	height: 100%;
+	font-size: 40px;
+	float: right;
+	border-bottom: 2px solid #fff;
+	visibility: visible;
+	transition: all .4s;
+}
+
+.inputs.amount:invalid + .error_icon + .input_butn_container{
+	width: 0;
+	font-size: 0;
+}
+
+.input_butn{
+	width: 50%;
+	height: 100%;
+	float: left;
+	background-color: #2C97DF;
+	cursor: pointer;
+	transition: .5s all;
+}
+
+.input_butn:hover{
+	background-color: #2B80B9
+}
+
+#summary_container{
+	width: 100%;
+	height: 150px;
+	padding-bottom: 20px;
+}
+
+/* change height ot auto */
+#customer_details_container{
+	width: 100%;
+	height: 180px;
+}
+
+.input_container{
+	width: 100%;
+	height: 46px;
+	margin-top: 20px;
+}
+
+.inputs.button.account{
+	margin-top: 12px;
+}
+
+#reset_butn{
+	margin-left: 2.5px;
+}
+
+#submitted_container{
+	width: 600px;
+	height: auto;
+	background-color: #2DCC70;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	display: none;
+}
+
+#submitted_title{
+	width: 100%;
+	background-color: #27AE61;
+	font-family: Existence;
+	text-align: center;
+	color: #fff;
+	padding: 10px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#submitted_info{
+	font-family: FiraSans;
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+	padding: 20px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.details{
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 560px){
+	.forms{
+		width: 100%;
+	}
+
+	#name_container, .item, #form_error, #submitted_container, #summary_container, #customer_details_container{
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	#form_error{
+		margin-top: 10px;
+	}
+
+	#submitted_container{
+		margin-bottom: 20px;
+	}
+
+	.intro_txt{
+		text-align: left;
+		padding: 40px;
+	}
+}
